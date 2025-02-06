@@ -9,7 +9,13 @@ def calc(A,B):
         if p.match(ai) or p.match(bi):
                 a=float(ai)
                 b=float(bi)
-                if 0<a and a<b and b<1000:
+
+                if not a.is_integer() or not b.is_integer():          #小数点以下値がある場合false
+                        print (a)
+                        valid=False
+                
+#               if 0<a and a<b and b<1000: 　　　変更前
+                elif 0<a  and b<1000:             #変更後
                         valid=True
                 else:
                         valid=False
